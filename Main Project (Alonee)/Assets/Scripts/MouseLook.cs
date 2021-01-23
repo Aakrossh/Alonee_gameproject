@@ -34,11 +34,11 @@ public class MouseLook : MonoBehaviour {
     private Vector2 look_Angles;
 
     private Vector2 current_Mouse_Look;
-    private Vector2 smooth_Move;
+   // private Vector2 smooth_Move;
 
-    private float current_Roll_Angle;
+   // private float current_Roll_Angle;
 
-    private int last_Look_Frame;
+   // private int last_Look_Frame;
 
     // Use this for initialization
     void Start () {

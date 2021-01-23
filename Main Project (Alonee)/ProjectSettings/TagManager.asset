@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Look Root
+  - Door
   layers:
   - Default
   - TransparentFX
