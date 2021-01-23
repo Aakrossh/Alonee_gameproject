@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour {
 
+    #region Mouse_Proporties
     [SerializeField]
     private Transform playerRoot, lookRoot;
 
@@ -34,6 +35,7 @@ public class MouseLook : MonoBehaviour {
     private Vector2 look_Angles;
 
     private Vector2 current_Mouse_Look;
+    #endregion
 
     private bool interractable;
 
@@ -45,20 +47,31 @@ public class MouseLook : MonoBehaviour {
 
     // private int last_Look_Frame;
 
+   // [SerializeField]
+    // private UI_Manager uiManager;
+
     [SerializeField]
-    private UI_Manager uiManager;
+    private Drawer_Behaviour drawer;
 
-  
+    [SerializeField]
+    private Door_Behaviour door;
 
-    // Use this for initialization
+    [SerializeField]
+    private Locker_Behaviour locker;
+
+
+    private bool openDoor;
+    private bool openDrawer;
+    private bool openLocker;
+
+
     void Start () {
 
         Cursor.lockState = CursorLockMode.Locked;
-        
 
+        
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
         LockAndUnlockCursor();
@@ -68,11 +81,8 @@ public class MouseLook : MonoBehaviour {
             LookAround();
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
+        Interract();
 
-            interractable = true;
-        }
     }
 
     void LockAndUnlockCursor() {
@@ -131,17 +141,54 @@ public class MouseLook : MonoBehaviour {
             if(hit.collider.tag == "Door")
             {
                 Debug.Log("Hitting Door");
-                uiManager.Interract(true);
+                openDoor = true;
+              //  uiManager.Interract(true);
 
+            }
+
+            if(hit.collider.tag == "Drawer")
+            {
+                Debug.Log("Hitting Drawer");
+                openDrawer = true;
+
+            }
+
+            if(hit.collider.tag == "Locker")
+            {
+                Debug.Log("Hitting Locker");
+                openLocker = true;
             }
         }
         else if(hit.collider == null)
         {
-            uiManager.Interract(false);
+           // uiManager.Interract(false);
         }
 
         Debug.DrawRay(transform.position, transform.forward * 5f, Color.green, 2f);
     }
+
+    private void Interract()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && interractable == true)
+        {
+            if(openDoor == true)
+            {
+                door.OpenDoor();
+            }
+
+            if(openDrawer == true)
+            {
+                drawer.OpenDrawer();
+            }
+
+            if(openLocker == true)
+            {
+                locker.OpenLocker();
+            }
+        }
+    }
+
+
 }
 
 

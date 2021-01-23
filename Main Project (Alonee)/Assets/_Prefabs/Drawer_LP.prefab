@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 357106056926473168}
+  - component: {fileID: 325955543}
+  - component: {fileID: 3583145972660079871}
   m_Layer: 0
   m_Name: Drawer_LP
   m_TagString: Untagged
@@ -32,6 +34,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &325955543
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134734197367140714}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 330ccc5c4d5cc4b4fa53b6ac488ba976, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3583145972660079871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134734197367140714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cbdadd838d5ea04bb7b70a92aa02724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5694932366884265505
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,9 +76,10 @@ GameObject:
   - component: {fileID: 8302244509411773053}
   - component: {fileID: 5951566990446955172}
   - component: {fileID: 8460572802237566122}
+  - component: {fileID: 7604459813549283807}
   m_Layer: 0
   m_Name: Drawer_LP
-  m_TagString: Untagged
+  m_TagString: Drawer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +92,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5694932366884265505}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -1.2565545, y: 2.096363, z: 0.45772895}
+  m_LocalPosition: {x: -1.256554, y: 2.096363, z: 0.45772895}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 357106056926473168}
@@ -111,6 +145,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7604459813549283807
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5694932366884265505}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.002416153, y: 0.00095339434, z: 0.0028468173}
+  m_Center: {x: -0.00032611846, y: -0.006940518, z: -0.0003014353}
 --- !u!1 &6364849979689225744
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Look Root
   - Door
+  - Drawer
+  - Locker
   layers:
   - Default
   - TransparentFX
