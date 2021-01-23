@@ -34,16 +34,20 @@ public class MouseLook : MonoBehaviour {
     private Vector2 look_Angles;
 
     private Vector2 current_Mouse_Look;
-   // private Vector2 smooth_Move;
+    // private Vector2 smooth_Move;
 
-   // private float current_Roll_Angle;
+    // private float current_Roll_Angle;
 
-   // private int last_Look_Frame;
+    // private int last_Look_Frame;
+
+    [SerializeField]
+    private UI_Manager uiManager;
 
     // Use this for initialization
     void Start () {
 
         Cursor.lockState = CursorLockMode.Locked;
+        
 
 	}
 	
@@ -51,6 +55,7 @@ public class MouseLook : MonoBehaviour {
 	void Update () {
 
         LockAndUnlockCursor();
+        Dectector();
 
         if(Cursor.lockState == CursorLockMode.Locked) {
             LookAround();
@@ -98,8 +103,33 @@ public class MouseLook : MonoBehaviour {
 
     } // look around
 
+    /*private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.tag == "Door")
+        {
 
-} // class
+        }
+    }*/
+
+    private void Dectector()
+    {
+        RaycastHit hit;
+        if(Physics.Raycast(this.transform.position,transform.forward,out hit, 5f))
+        {
+            if(hit.collider.tag == "Door")
+            {
+                uiManager.Interract(true);
+                Debug.Log("Hitting Door");
+            }
+        }
+        else if(hit.collider == null)
+        {
+            uiManager.Interract(false);
+        }
+
+        Debug.DrawRay(transform.position, transform.forward * 5f, Color.green, 5f);
+    }
+}
 
 
 
