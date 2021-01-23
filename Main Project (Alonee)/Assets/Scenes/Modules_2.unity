@@ -5739,6 +5739,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 393946141}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &394257279 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 394257279, guid: 0018e13b46ab84a638da2961b5c3c295,
+    type: 3}
+  m_PrefabInstance: {fileID: 1874005305}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &404198998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25601,7 +25607,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 170082984013894765, guid: 2afad8a50d58b324d9f42f7ca7ec4451, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2afad8a50d58b324d9f42f7ca7ec4451, type: 3}
 --- !u!4 &1612744207 stripped
 Transform:
@@ -29909,10 +29916,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1612781054, guid: 0018e13b46ab84a638da2961b5c3c295, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.24
-      objectReference: {fileID: 0}
     - target: {fileID: 1535745819391134, guid: 0018e13b46ab84a638da2961b5c3c295, type: 3}
       propertyPath: m_Name
       value: Player
@@ -29966,6 +29969,16 @@ PrefabInstance:
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 1429666950}
+    - target: {fileID: 114890023081246712, guid: 0018e13b46ab84a638da2961b5c3c295,
+        type: 3}
+      propertyPath: interraction
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114890023081246712, guid: 0018e13b46ab84a638da2961b5c3c295,
+        type: 3}
+      propertyPath: raycastOrigin
+      value: 
+      objectReference: {fileID: 394257279}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0018e13b46ab84a638da2961b5c3c295, type: 3}
 --- !u!1001 &1876280710

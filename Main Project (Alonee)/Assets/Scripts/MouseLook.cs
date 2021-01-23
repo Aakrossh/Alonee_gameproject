@@ -34,6 +34,11 @@ public class MouseLook : MonoBehaviour {
     private Vector2 look_Angles;
 
     private Vector2 current_Mouse_Look;
+
+    private bool interractable;
+
+    [SerializeField]
+    private Transform raycastOrigin;
     // private Vector2 smooth_Move;
 
     // private float current_Roll_Angle;
@@ -42,6 +47,8 @@ public class MouseLook : MonoBehaviour {
 
     [SerializeField]
     private UI_Manager uiManager;
+
+  
 
     // Use this for initialization
     void Start () {
@@ -61,7 +68,12 @@ public class MouseLook : MonoBehaviour {
             LookAround();
         }
 
-	}
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+
+            interractable = true;
+        }
+    }
 
     void LockAndUnlockCursor() {
 
@@ -114,12 +126,13 @@ public class MouseLook : MonoBehaviour {
     private void Dectector()
     {
         RaycastHit hit;
-        if(Physics.Raycast(this.transform.position,transform.forward,out hit, 5f))
+        if(Physics.Raycast(raycastOrigin.position, raycastOrigin.forward, out hit, 3f))
         {
             if(hit.collider.tag == "Door")
             {
-                uiManager.Interract(true);
                 Debug.Log("Hitting Door");
+                uiManager.Interract(true);
+
             }
         }
         else if(hit.collider == null)
@@ -127,7 +140,7 @@ public class MouseLook : MonoBehaviour {
             uiManager.Interract(false);
         }
 
-        Debug.DrawRay(transform.position, transform.forward * 5f, Color.green, 5f);
+        Debug.DrawRay(transform.position, transform.forward * 5f, Color.green, 2f);
     }
 }
 
