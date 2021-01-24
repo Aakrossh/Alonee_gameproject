@@ -13,6 +13,8 @@ public class Drawer_Behaviour : MonoBehaviour
 
     public void OpenDrawer()
     {
+        Debug.Log("Opening Drawer");
+
         anim.SetTrigger("Drawer");
     }
 }

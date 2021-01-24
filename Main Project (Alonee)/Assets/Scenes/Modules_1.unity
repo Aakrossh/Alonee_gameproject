@@ -180,7 +180,8 @@ PrefabInstance:
         type: 3}
       propertyPath: door
       value: 
-      objectReference: {fileID: 1950008116}
+      objectReference: {fileID: 8699617055380423664, guid: 2afad8a50d58b324d9f42f7ca7ec4451,
+        type: 3}
     - target: {fileID: 114890023081246712, guid: 0018e13b46ab84a638da2961b5c3c295,
         type: 3}
       propertyPath: drawer
@@ -735,18 +736,6 @@ Transform:
   m_Father: {fileID: 394059431}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
---- !u!114 &1950008116 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8699617055380423664, guid: 2afad8a50d58b324d9f42f7ca7ec4451,
-    type: 3}
-  m_PrefabInstance: {fileID: 756499433}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aff62c1237cfcd44c93595c56235cfa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1820257872929425042
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -813,6 +802,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Drawer_LP
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134734197367140714, guid: d46f00cd30997d14cbfb823045536ec8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694932366884265505, guid: d46f00cd30997d14cbfb823045536ec8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Drawer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d46f00cd30997d14cbfb823045536ec8, type: 3}

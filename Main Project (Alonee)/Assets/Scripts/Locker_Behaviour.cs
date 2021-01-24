@@ -14,5 +14,6 @@ public class Locker_Behaviour : MonoBehaviour
     public void OpenLocker()
     {
         anim.SetTrigger("Locker");
+        Debug.Log("Opening Locker"); 
     }
 }

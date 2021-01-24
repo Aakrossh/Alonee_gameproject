@@ -37,6 +37,7 @@ public class MouseLook : MonoBehaviour {
     private Vector2 current_Mouse_Look;
     #endregion
 
+    [SerializeField]
     private bool interractable;
 
     [SerializeField]
@@ -59,9 +60,11 @@ public class MouseLook : MonoBehaviour {
     [SerializeField]
     private Locker_Behaviour locker;
 
-
+    [SerializeField]
     private bool openDoor;
+    [SerializeField]
     private bool openDrawer;
+    [SerializeField]
     private bool openLocker;
 
 
@@ -140,24 +143,39 @@ public class MouseLook : MonoBehaviour {
         {
             if(hit.collider.tag == "Door")
             {
+                interractable = true;
                 Debug.Log("Hitting Door");
                 openDoor = true;
-              //  uiManager.Interract(true);
-
+                //  uiManager.Interract(true);
+            }
+            else
+            {
+                openDoor = false;
             }
 
-            if(hit.collider.tag == "Drawer")
+            if (hit.collider.tag == "Drawer")
             {
+                interractable = true;
                 Debug.Log("Hitting Drawer");
                 openDrawer = true;
 
             }
-
-            if(hit.collider.tag == "Locker")
+            else
             {
+                 openDrawer = false;
+            }
+
+            if (hit.collider.tag == "Locker")
+            {
+                interractable = true;
                 Debug.Log("Hitting Locker");
                 openLocker = true;
             }
+            else
+            {
+                openLocker = false;
+            }
+
         }
         else if(hit.collider == null)
         {
@@ -173,16 +191,19 @@ public class MouseLook : MonoBehaviour {
         {
             if(openDoor == true)
             {
+                Debug.Log("Input openDoor");
                 door.OpenDoor();
             }
 
             if(openDrawer == true)
             {
+                Debug.Log("Input openDrawer");
                 drawer.OpenDrawer();
             }
 
             if(openLocker == true)
             {
+                Debug.Log("Input openLocker");
                 locker.OpenLocker();
             }
         }
