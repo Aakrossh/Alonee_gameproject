@@ -13,7 +13,7 @@ public class Door_Behaviour : MonoBehaviour
 
     public void OpenDoor()
     {
-        anim.SetBool("openDoor", true);
+        anim.SetTrigger("Door");
         Debug.Log("Opening Door");
     }
 }
