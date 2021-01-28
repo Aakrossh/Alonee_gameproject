@@ -7,9 +7,9 @@ public class Music_Events : MonoBehaviour
     public AudioSource horrorAudio;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("horror"))
+        if (other.tag == "Player")
         {
-            Debug.Log("Playing Horror sound");
+            Debug.Log("Playing horror sound");
             horrorAudio.Play();
         }
     }

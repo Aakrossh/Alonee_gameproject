@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -24,8 +25,11 @@ public class PlayerMovement : MonoBehaviour {
 
     void MoveThePlayer() {
 
-        move_Direction = new Vector3(Input.GetAxis("Horizontal"), 0f,
-                                     Input.GetAxis("Vertical"));
+        float move_h = CrossPlatformInputManager.GetAxis("Horizontal");
+        float move_v = CrossPlatformInputManager.GetAxis("Vertical");
+
+        move_Direction = new Vector3(move_h, 0f, move_v);
+
 
         move_Direction = transform.TransformDirection(move_Direction);
         move_Direction *= speed * Time.deltaTime;
