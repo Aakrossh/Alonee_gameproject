@@ -68,6 +68,7 @@ public class MouseLook : MonoBehaviour {
     private bool openLocker;
 
 
+
     void Start () {
 
         Cursor.lockState = CursorLockMode.Locked;
@@ -110,8 +111,8 @@ public class MouseLook : MonoBehaviour {
 
     void LookAround() {
 
-        current_Mouse_Look = new Vector2(
-            Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"));
+        current_Mouse_Look = new Vector2(Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X")
+            ); 
 
         look_Angles.x += current_Mouse_Look.x * sensivity * (invert ? 1f : -1f);
         look_Angles.y += current_Mouse_Look.y * sensivity;
